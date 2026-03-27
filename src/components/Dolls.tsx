@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { RigidBody } from '@react-three/rapier';
-import { Sphere, Cylinder, RoundedBox } from '@react-three/drei';
+import { Sphere, Cylinder, Box } from '@react-three/drei';
 import * as THREE from 'three';
 
 /**
@@ -169,9 +169,9 @@ const Doll = ({ type, position }: { type: CharacterType; position: [number, numb
               <primitive object={bodyMat} attach="material" />
             </Cylinder>
             {/* 이빨 (라부부 특유의 삐뚤 이) */}
-            <RoundedBox args={[0.15, 0.06, 0.04]} position={[0, bodyScale * 0.55, bodyScale * 0.62]} radius={0.01}>
+            <Box args={[0.15, 0.06, 0.04]} position={[0, bodyScale * 0.55, bodyScale * 0.62]}>
               <meshStandardMaterial color="#ffffff" roughness={0.3} />
-            </RoundedBox>
+            </Box>
           </>
         )}
 
@@ -243,9 +243,9 @@ const Doll = ({ type, position }: { type: CharacterType; position: [number, numb
               <primitive object={accentMat} attach="material" />
             </Cylinder>
             {/* 넓은 입 */}
-            <RoundedBox args={[0.35, 0.08, 0.06]} position={[0, bodyScale * 0.5, bodyScale * 0.6]} radius={0.03}>
+            <Box args={[0.35, 0.08, 0.06]} position={[0, bodyScale * 0.5, bodyScale * 0.6]}>
               <primitive object={accentMat} attach="material" />
-            </RoundedBox>
+            </Box>
             {/* 머리 위 뿔/더듬이 */}
             <Sphere args={[0.08, 8, 8]} position={[0, bodyScale * 1.35, 0]}>
               <primitive object={accentMat} attach="material" />
